@@ -1,0 +1,930 @@
+#Principais Famílias de Distribuições
+
+
+*Debian Family Systems (such as Ubuntu)
+
+
+*SUSE Family Systems (such as openSUSE)
+
+
+*Fedora Family Systems (such as CentOS)
+
+
+#Diretórios principais
+
+/ - raiz
+/bin - comandos básicos do linux
+/boot - arquivos que o linux utiliza para inicialização
+/usr - armazena a maior parte dos programas e aplicações
+/dev - (device) arquivo dos dispositivos de hardware
+/etc - armazenar arquivos de configurações do sistema
+/home - armazenar arquivos de uso pessoal do usuário
+/lib - bibliotecas de funções do sistema compartilhadas pelos programas
+/mnt - diretório que funciona como ponto de montagem de dispositivos de armazenamento, como por exemplo unidade de CD e DVD
+/opt - programas opcionais/adicionais, não são oficiais da distribuição
+/proc - diretório virtual de informações do sistema
+/root - diretório home do superusuário (admin)
+/sbin - comandos do sistema para acesso do superusuário
+/tmp - armazena arquivos temporários gerados pelos programas
+/var - informações variáveis geradas pelo sistema: spool de impressões, cache, log
+
+<#-------------------------------------------------------------------------->#
+git add .
+git commit -m "enviando arquivo para o github"
+git push
+usuario e senha
+
+----------------
+git pull
+
+git clone nomedodiretorio
+
+# navegar entre pastas: cd ../ vander
+                        cd ./ vander
+**caminho relativo
+
+# cd / home / vander
+
+# cd // home / vander
+**caminho absoluto
+
+*cd..   , volta ao arquivo pai
+*cd arquivo , abre o arquivo
+*cd -   ,volta arquivo anterior monstranto arquivo que está
+*cd . ,mostra arquivo atual
+*cd ~ , volta para arquivo home
+
+Em geral, os programas executáveis devem residir 
+nos diretórios / bin, / usr , / sbin  
+
+**pwd - mostrar o caminho atual 
+
+**ls - listar conteúdo da pasta atual 
+
+# ls -l, procura arquivos especificos
+
+# ls -l texto1.txt text2.txt
+
+**cd - mudar / navegar entre diretórios 
+
+**mkdir - criar diretório/pasta
+
+**rmdir/rm - remover diretório
+
+**touch  , cria arquivo, ex: touch arquivo.txt
+
+**rm -> remoçao de aquivos
+**rm -f -> força a remoçao
+**rm -i -> remoçao iterativa
+
+**rm -r -> remoçao de diretorio
+**rm -rf -> força remoçao de diretorio
+
+
+
+- Remover o "arquivo1.bkp" no diretório atual.
+# rm arquivo1.bkp
+ 
+- Remover 2 arquivos no diretório atual.
+# rm arquivo1.txt arquivo2.txt 
+ 
+- Remover todos arquivos em /tmp.
+# rm / tmp /* ~nomeusuario
+ 
+- Remover todos os arquivos do diretório atual.
+# rm * 
+
+- Remover todas os pastas do diretório atual.
+# rm -r * 
+ 
+ 
+- Remover todos os arquivos do diretório / home / usuario.
+# rm / home / nomeusuario /* .
+ 
+- Remover todos os arquivos e sub-diretórios do diretório /var/log/ .
+# rm -R / var / log /* 
+ 
+Remover todo o diretório /log.
+# rm -R / var/ log /
+ 
+Força a remoção de todo o diretório /log.
+# rm -rf / var/log /
+
+
+**pushd - empilha a pasta/diretório atual 
+
+**popd - desempilha a pasta atual 
+
+**mv - move ou renomeia arquivos e/ou pastas 
+-> renomeando texto1.txt para texto.txt
+mv texto1.txt texto.txt
+
+- Mover  o "arquivo1.sh" para dentro do diretório / home /usuario.
+# mv arquivo1.sh / home / usuario
+ 
+Move 2 arquivos no diretório atual para outro diretório, no caso "/ home / usuario".
+# mv arquivo1.py arquivo2.py / home / usuario
+ 
+- Mover todos arquivos em / tmp para o home do usuário "nomeusuario".
+# mv / tmp /* ~usuario
+ 
+- Mover todos os arquivos do diretório atual para / opt.
+# mv * / opt
+ 
+- Mover todos os arquivos do diretório / home / usuario para o diretório atual.
+# mv / home / usuario /* .
+ 
+- Mover todos os arquivos e sub-diretórios do diretório / var / log / para /tmp.
+# mv -R / var / log /* / tmp
+ 
+- Move um diretório "/ etc / apache2 /" incluindo todos os arquivos e sub-diretório para outro diretório "/ mnt / backup /".
+# mv -R / etc /apache2 / / mnt / backup /
+ 
+- Move todos os arquivos e sub-diretórios do diretório / opt / teamviewer9 / para home do usuário "nomeusuario".
+# mv -Rv / opt / teamviewer9 /* ~usuario /
+ 
+- Move o diretório "/ opt / teamviewer9 /" incluindo todos os arquivos e sub-diretório para home do usuário "nomeusuario".
+# mv -Rv / opt / teamviewer9 / ~usuario /
+
+
+**cp - copia arquivos e/ou pastas /  cp -r (copia todos os arquivos e pastas)
+
+Realizar uma cópia no diretório/pasta atual.
+# cp arquivo1.sh Arquivo
+ 
+- Copiar o arquivo1 para dentro do diretório /home/nomeusuario.
+# cp arquivo1 / home / nomeusuario
+ 
+- Copiar 2 arquivos no diretório atual para outro diretório, no caso "/ home / nomeusuario".
+# cp arquivo1 arquivo2 / home / nomeusuario
+ 
+- Copiar todos arquivos em /tmp para o home do usuário "nomeusuario".
+# cp / tmp /* ~nomeusuario
+ 
+- Copiar todos os arquivos do diretório atual para /opt.
+# cp * / opt
+ 
+- Copiar todos os arquivos do diretório / home / usuario para o atual.
+# cp / home / usuario /* .
+ 
+- Copiar todos os arquivos e pastas do diretório / var / log / para / tmp.
+# cp -R / var / log /* / tmp
+ 
+- Copiar o diretório "/ etc / apache2 /" incluindo todos os arquivos e pastas para outro diretório "/ mnt / backup /".
+# cp -R / etc / apache2 / / mnt / backup /
+ 
+- Copiar todos os arquivos e pastas do diretório / opt / teamviewer9 / para home do usuário "nomeusuario".
+# cp -Rv / opt / teamviewer9 /* ~nomeusuario/
+ 
+- Copiar o diretório "/ opt / teamviewer9 /" incluindo todos os arquivos e pastas para home do usuário "nomeusuario".
+# cp -Rv / opt / teamviewer9 / ~nomeusuario /
+ 
+* O "v" no comando é para mostrar na tela o que está sendo executado no momento.
+
+**ln – Cria links entre arquivos
+
+**cat – Mostra o conteúdo de um arquivo, edita,  faz uma cópia deste arquivo, ou uma junção.
+
+**tac - exibe o conteudo de um arquivo de tras para frente.
+
+**head, tail – Mostra o começo e fim do arquivo
+O comando head, como o nome diz (cabeçalho), mostra o começo de um arquivo. O comando 
+tail (calda) mostra o final de um arquivo. Por padrão, ambos comandos mostram as 10 
+linhas correspondentes.
+
+**more, less – Visualiza arquivos por páginas
+No less, a paginação funciona como em uma página de manual (na verdade, a visualização
+das páginas de manual é feita com o less): é possível utilizar as setas para navegar
+no documento para cima e para baixo, utilizar as teclas PgUp e PgDown para paginar, 
+o comando /pesquisa para pesquisar por uma palavra no documento e a tecla q para sair.
+
+**touch é frequentemente usado para definir ou atualizar o acesso, alterar e modificar
+as datas de arquivos. Por predefinição, restaura o timestamp de um arquivo para
+corresponder à hora atual.
+# touch -t 03201600 meuarquivo.c
+No entanto, você também pode criar um arquivo vazio usando o touch: touch nomearquivo.py
+
+
+**file – Indica o tipo de arquivo
+
+**touch – Muda timestamps, cria arquivos, ex touch arquivo.txt,
+touch -t 03201600 meuarquivo.txt
+
+***Redirecionamento de E/S
+
+texto.txt > etrada-arquivo
+
+texto.txt < saida-arquivo
+
+texto.txt < toda-sada-arquivo 2 < & 1
+
+Pipe
+concatena comandos. Redireciona comandos
+
+Commando1 | Commando2 | Commando3
+
+**find procura arquivos, pode usar condiçoes para procurar 
+
+# find / usr -name gcc
+*procura aa extesao .gcc em / usr
+
+# find / usr -type f -name test1.txt
+*procura text.txt em / usr
+
+-> Encontrando arquivos com o FIND
+# find -iname seuarquivo.php
+- Este comando fará uma busca pelo arquivo “seuarquivo.php” no diretório presente.
+
+# find / home / user -iname seuarquivo.php
+- Este comando buscará no diretório “/ home /user ” pelo arquivo “seuarquivo.php”.
+
+# find / -iname seuarquivo.php
+- Este comando vasculhará todos os arquivos presentes no computador em busca do arquivo “seuarquivo.php”.
+
+-> Buscar textos ou strings dentro de arquivos com o FIND
+# find ./* -type f -exec grep -l seutexto {} \;
+- Este comando ira vasculhar todos os arquivos de seu computador a procura de quais contém a palavra “seutexto”.
+
+-> Encontrar arquivos baseados em tamanho utilizando o comando FIND
+# find / home -size +2G
+- Este comando irá procurar na pasta “/ home” arquivos que possuem um tamnho maior que 2 gigabytes….
+
+# find / home -size 2G
+….este encontrará arquivos com exatemente 2 gigabytes…
+
+# find / home -size -2 G
+- e este encontrar arquivos com menos de 2 gigabytes.
+
+-> Encontrar arquivos a partir da permissão
+# find / home -type f perm 644
+- Com este comando você irá encontrar todos os arquivos com a permisão 644 na pasta “/ home”.
+
+-> Encontrar arquivos modificados nos últimos 30 dias
+# find ./user -mtime 30
+
+-> Procura no / home todos os arquivos do usuário novousuario
+
+# find / home / -user novousuario -print
+
+
+-> Procura no diretório atual arquivos maiores que 2MB (2048kb): 
+
+# find . -size +2048 -print
+
+-> Procura em todo o sistema arquivos com a extensão .doc e .conf:
+find / -name '*.doc' -o -name '*.conf' -print
+
+-> limpar arquivos de 2008:
+
+#  find / backups -name "*2009-*.gz" -delete
+*Com isto todos os arquivos das pastas abaixo de /backups que continham 2009 em seu nome foram deletados.
+
+# Encontra arquivos alterados 10 dias atrás 
+find / -mtime 10
+ 
+# Encontra arquivos acessados 10 dias atrás
+find / -atime 10
+ 
+# Para um range, digite
+find / -mtime +10 -mtime -10
+
+ 
+**wget faz download de arquivos
+wget http://meusite.com/arquivos/meuarquivo.pdf
+
+**comprimir arquivos zip 
+zip backup *
+
+zip -r backup.zip ~
+
+**Desconpactar 
+unzip backup.zip
+
+***O linux possui os principais editores:
+- nano, um editor baseado em texto - gedit, um editor gráfico - vi e emacs, 
+dois editores avançados com interfaces gráficas e de texto. 
+
+
+***Criando arquivos sem usar um editor
+# echo "linha um" < meuarquivo.txt 
+# echo "linha dois" << meuarquivo.txt 
+# echo "linha três" << meuarquivo.txt A segunda maneira é usar o cat combinado 
+com redirecionamento:
+
+# cat << EOF > meuarquivo.txt > Linha um > Linha dois > Linha três > EOF
+
+CTRL-G: Exibe a tela de ajuda 
+CTRL-O: Gravar em um arquivo 
+CTRL-X: Sair de um arquivo 
+CTRL-R: Inserir conteúdo de outro arquivo para o buffer atual 
+CTRL-C: Cancela os comandos anteriores.
+
+
+**cat
+
+##cat readme.txt exibirá o conteúdo de readme.txt no terminal. Muitas vezes,
+o objetivo principal do cat, no entanto, é combinar (concatenar) vários arquivos juntos.
+Você pode executar as ações listadas na tabela a seguir usando cat:
+
+# cat arquivo.txt 
+
+-Este comando imprime na tela o conteúdo do arquivo. 
+
+# cat > arquivo.txt 
+
+- Este comando cria um arquivo recebendo o texto digitado logo após o 
+comando. Para sair do arquivo criado utilize Ctrl + D. 
+
+# cat arquivo1.txt > arquivo2.txt 
+
+Este comando faz com que o arquivo2.txt receba o conteúdo do arquivo1.txt Obs.: as 
+informações contidas no arquivo2.txt são sobrescritas pelas do arquivo1.txt 
+
+# cat arquivo1.txt >> arquivo2txt 
+
+Este comando adiciona o conteúdo do arquivo1.txt no final do arquivo2.txt 
+
+
+-> Podemos usar o comando cat para exibir os arquivos na tela. Por exemplo,
+# cat teste1.sh teste2.sh
+
+-> mostra na tela o conteúdo dos arquivos teste1.sh e teste2.sh
+
+*Para parar a rolagem da tela e permitir a navegação com o resultado do comando cat, use os comandos more ou less junto com o pipe (caractere "|").
+# cat teste1 teste2 | more
+ ou
+# cat teste1.txt teste2.txt | less
+
+-> Para concatenar vários arquivos e colocar o resultado em um outro arquivo deve-se usar o redirecionador de saída >. Por exemplo,
+# cat arq1.txt arq2.txt arq3.txt > arq_final.txt
+
+*gera o arquivo arq_final.txt que corresponde a concatenação dos arquivos arq1.txt, arq2.txt e arq3.txt
+Se já existe um arquivo chamado arq_final, este arquivo é destruído e criado novamente.
+
+-> Para inserir o arquivo arq4.txt no final do arquivo arq_final.txt digite
+# cat arq4.txt >> arq_final.txt
+
+-> Também é possível criar um arquivo usando o comando cat junto com o redirecionador de saída >. Para ter um exemplo, basta digitar as três linhas 
+abaixo (tecle ENTER ao final das duas primeiras linhas e CTRL+D ao final da terceira linha).
+# cat > teste.txt
+
+-> Para numerar as linhas do arquivo basta usar o parâmetro n. Por exemplo,
+# cat -n teste1.txt
+*exibe o número e o conteúdo de cada linha do arquivo teste1.txt.
+
+##Dicas: Poderá ser utilizado direcionamento para os comandos more ou less, para 
+visualizar o arquivo de uma maneira em que você possa ler todo ele, assim como com o 
+grep: 
+
+# cat / etc / group | more
+# cat / etc / group | less
+# cat / etc / group | grep adm 
+# cat arquivo.sh    | tail
+
+**echo
+echo umastrig
+echo umastring > newfile.txt
+echo umastring >> existingfile.txt
+echo $variavel
+
+**sort 
+sort é usado para reorganizar as linhas de um arquivo de texto em ordem ascendente ou
+decrescente, de acordo com uma chave de classificação. Você também pode classificar
+por campos específicos de um arquivo. A chave de classificação padrão é a ordem dos 
+caracteres ASCII (ou seja, essencialmente em ordem alfabética). sort pode ser usado da
+seguinte forma:
+
+sort arquivo.txt
+
+cat file1.txt file2.txt | sort
+
+sort -r arquivo.sh
+
+sort -k 3 arquivo.sh
+
+
+**uniq
+
+uniq é usado para remover linhas duplicadas em um arquivo de texto e é útil para 
+simplificar a exibição de texto.
+uniq requer que as entradas duplicadas sejam consecutivas. Assim, muitas vezes é 
+executado primeiro sort e, em seguida, canaliza a saída em uniq; Se sort for passado
+com a opção -u, ele pode fazer tudo isso em uma única etapa.
+
+# sort file1.txt file2.txt | uniq > file3.txt
+ou sort -u file1.txt file2.txt > file3.txt
+
+Para contar o número de entradas duplicadas, use o seguinte comando:
+uniq -c nomearquivo e para mostrar as ocorrências
+mais populares uniq -d nomearquivo
+
+**paste
+paste pode ser usado para criar um único arquivo contendo todas as três colunas.
+As diferentes colunas são identificadas com base em delimitadores 
+(espaçamento usado para separar dois campos). Por exemplo, os delimitadores podem ser
+um espaço em branco, um tab ou enter. Na imagem fornecida, um único espaço é usado 
+como delimitador em todos os arquivos.
+paste também aceita as seguintes opções:
+-d, que especificam uma lista de delimitadores a serem usados ??em vez de tabulações 
+para separar valores consecutivos em uma única linha. Cada delimitador é usado por 
+sua vez; Quando a lista foi esgotada, a pasta começa novamente no primeiro delimitador. 
+-s, faz com que o paste anexe os dados em série em vez de em paralelo; Ou seja, de
+forma horizontal, e não vertical.
+
+**grep
+grep é amplamente utilizado como uma das principais ferramentas de pesquisa de texto. 
+Ele verifica os arquivos de padrões especificados e pode ser usado com expressões 
+regulares, bem como strings simples, como mostrado na tabela:
+
+# grep [argumento] <nomearquivo>
+
+# grep -v [argumeto] <nomearquivo>
+
+# grep [0-9] <nomearquivo>
+
+# grep -c 3 [argumento] <nomearquivo>
+
+
+grep e expressoes regulares
+# grep '[a-zA-Z]'         {qualquer linha com pelo menos uma letra}    
+# grep '[^a-zA-Z0-9]'        {qualquer coisa que não seja uma letra ou número}    
+# grep '[0-9]\{3\}-[0-9]\{4\}' {999-9999, como números de telefone}    
+# grep '^.$'               {linhas com exatamente 1 caracter}    
+# grep '"smug"'                 {'smug' com aspas duplas}    
+# grep '"*smug"*'            {'smug', com ou sem aspas}    
+grep '^\.'         {qualquer linha que inicia com ponto "."}    
+grep '^\.[a-z][a-z]' {linha inicia com "." e 2 letras}
+
+Abaixo o comando grep é usado para fazer busca de padrões no arquivo projeto.txt.
+
+-> Quando a expressão procurada é composta por mais de uma palavra, deve-se usar aspa simples.
+
+# grep 'teste de ' projeto.txt
+
+-> Para ver apenas as linhas que são iniciadas com o caractere "#".
+# grep ^# projeto.txt
+
+-> Para ver apenas as linhas que não são iniciadas com o caractere "#".
+# grep -v ^# projeto.txt
+
+-> Para ver apenas as linhas que terminam com a palavra "false".
+# grep false$ projeto.txt
+
+-> Para ver apenas as linhas que começam o caractere "s" e terminam com a palavra "false".
+# grep ^s projeto.txt | grep false$
+
+->O ponto (.) em um padrão representa qualquer caractere.
+# grep 'projeto.lin' projeto.txt
+
+-> Uma string entre colchetes compara qualquer caractere definido na string.
+# grep '[P]projeto' projeto.txt
+
+-> Pode-se usar o hífen para indicar uma série de caracteres.
+# grep 'Projeto[a-x]' projeto.txt
+
+-> Pode-se usar ^ para indicar os caracteres que não estão na lista.
+# grep 'Projeto[^a-m]' projeto.txt
+
+-> Uma expressão precedida por ^ encontra as linhas iniciadas pela expressão.
+# grep '^Projeto' projeto.txt
+
+->Uma expressão seguida por $ encontra as linhas terminada pela expressão.
+# grep 'Projeto$' projeto.txt
+
+-> A expressão ^$ indica linhas vazias e a opção -n mostra a linha do arquivo da ocorrência.
+# grep -n ^$ projeto.txt
+
+-> A barra invertida desativa qualquer significado especial que um caractere possa ter.
+# grep 'projeto\.lin' projeto.txt
+
+-> Pode-se usar a opão -e para definir mais de um padrão de pesquisa. No caso abaixo, procura-se a palavra DESCRIPTION (sozinha em uma linha) e a string all (em qualquer posição das linhas).
+# grep -e ^DESCRIPTION$ -e all projeto.txt
+
+
+**strings
+
+# strings book1.xls | grep my_string
+
+ls | grep b | sort -r | tee arquivo.out | wc -l 
+
+
+<#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2#>
+
+<<<<<SHELL>>>>>
+
+*Arquivo executavel
+
+cat > olamundo.sh
+chmod +x olamundo.sh [ para ser executavel ]
+#!/bin/bash
+echo "ola mundo"
+[ ctrl c , para sair do cat ]
+
+bash olamudo.sh
+->saida == ola mundo
+
+******************************************************************
+cat > mostraome.sh 
+chmod +x mostranome.sh [ para ser executavel ]
+#!/bin/bash
+echo "Entre com seu nome"
+read nome [ ler nome ]
+echo "O nome foi: $nome"
+
+-> saida == Entre com seu nome 
+            O nome foi: vander
+
+*****************************************************************
+
+visualisando valores de retorno do scrip shell
+ls / etc / passord [ enter ]
+/ etc / password [ enter ]
+echo $? [ enter ]
+-> saida == 0
+
+**********************************************
+
+ls / etc / passwordnot 
+echo $? [ enter ]
+-> saida == 2
+
+**************************************************************
+
+Parametros de script
+
+./ script.sh / tmp
+./ scrip.sh 100 200
+
+Parametros 
+
+$0 nome do script
+$1 primeiro parametro
+$2 segundo parametro
+$3 terceiro parametro
+$* todos os parametros
+$# todos os argumentos
+
+********************************************
+funçao
+
+cat > versao.sh
+chmod +x versao.sh [ para ser executavel ]
+#!/bin/bash
+
+versao ( )
+{
+  echo "Minha versao é: $1
+}
+versao ubumtu fedora
+
+[ ctrl c ]
+
+-> saida == Minha versao é: ubumtu  
+
+************************************************
+
+cat > testarq.sh
+chmod +x testarq.sh [ para ser executavel ]
+#!/bin/bash
+arq=$1
+
+if [ -f $arq ]
+then
+  echo -e "Arquivo existente"
+else
+  echo -e "Arquivo nao existe e sera criado"
+  touch $arq
+  echo -e "Arquivo $arq  criado sucesso!"
+  ls
+fi
+[ ctrl c ]
+
+bash testarq.sh vander.sh
+-> saida == Arquivo nao existe e sera criado 
+           Arquivo vander.sh criado com sucesso!
+
+************************************************************
+
+se tiver iformaçoes, nao sera excluido
+se estiver vazio, sera excluido
+se nao existir, sera criado
+
+cat > exerc.sh
+chmod +x exerc.sh [ para ser executavel ]
+#!/bin/bash
+arq=$1
+
+if [ -f $arq ]
+then
+  if [ -s $arq ]
+  then
+  echo -e "Cotem informaçoes, nao pode ser excluido"
+  else
+  rm $arq
+  echo -e "Arquivo $arq excluido!!"
+  ls
+  fi
+else
+  echo -e "Arquivo inexistente !!"
+fi
+[ ctrl c ]
+
+bash exerc.sh vander.sh 
+
+***********************************************************
+cat > testatam.sh
+chmod +x testatam.sh [ para ser executavel ]
+#!/bin/bash
+arq=$1
+if [ -s $arq ]
+then
+   echo -e "cheio"
+else
+   echo -e "vazio"
+
+fi
+[ ctrl c ]
+
+bash testatam.sh vander.sh
+
+******************************************************************
+cat > tgt.sh
+chmod +x tgt.sh [ para ser executavel ]
+#!/bin/bash
+arq=$1
+if [  9 -gt 8 ]
+then
+   echo "maior"
+else
+   echo "menor"
+fi
+[ctrl ] 
+
+******************************************************************
+******************************************************************
+cat > arq.sh
+chmod +x arq.sh [ para ser executavel ]
+#!/bin/bash
+arq=$1
+if [ -f $arq ]
+then
+    echo -e "Arquivo existente"
+else
+    echo -e "Arquivo nao existe"
+fi
+[ ctrl c ]
+
+************************************************
+
+Fatorial [ while ]
+
+cat > fatorial.sh
+chmod +x fatorial.sh [ para ser executavel ]
+#!/bin/bash
+cont=$1
+fat = 1
+
+while ( $cont -gt 0 )
+do
+  fat = $( ( $fat * $cont ) )
+  cont = $( ( $cont - 1 ) )
+done
+echo $fat
+
+************************************************************
+Fatorial [ for ]
+
+cat > fatorial.sh
+chmod +x fatoral.sh [ para ser executavel ]
+#!/bin/bash
+
+echo "Digite o numero para saber o fatorial"
+read cont
+fat = 1
+
+for ( (i=1; i<=cont;i++) )
+do
+ fat =$ ( ($fat * $i) )
+done
+
+echo "O fatorial de $cont é $fat"
+
+****************************************************************
+cat > tamaho.sh
+chmod +x tamanho.sh [ para ser executavel ]
+#!/bin/bash
+file=$1
+num = $ ( cat "$file" | wc -l )
+echo -e "$num\n"
+if [[ $num -lt 100 ]]
+then
+    mv $file ./ pastaPequena
+elif [[ $num -gt 100 ]] && [[ $num -lt 500 ]]
+then
+    mv $file ./ pastaMedia
+else
+    mv $file ./ pastaGrande
+fi
+
+**************************************
+-> comecei a abreviar a shell 
+
+for nomearq in $(ls)
+do
+ echo $nomearq 
+done
+
+**************************************
+
+for arq in $(ls)
+do
+ case $arq in
+             *.c)
+             echo $arq;;
+ esac
+done
+
+*******************************************
+
+read nome 
+if [ -z $nome ]
+then
+   echo "nome vazio"
+else
+   echo "nome digitao = $nome"
+fi
+
+********************************************
+
+read nome 
+case $nome in
+           *.c)
+           echo "arquivo tipo c";;
+           *.exe)
+           echo "executavel windows";;
+           *.sh)
+           echo "arquivo shell";;
+esac
+
+***************************************
+
+obs:
+wc -l -> conta linhas
+wc -w -> conta palavras
+wc -c -> conta caracteres
+
+**************************
+echo "digite um numero"
+read cont
+if [ $cont -eq 100 ]
+then
+   echo "é igual a 100"
+elif [ $cont -gt 100 ]
+   echo "é maior que 100]
+else
+   echo "é menor que 100"
+fi
+
+************************************
+comandos do if 
+
+-eq == igual
+-ne == diferente
+-lt == menor
+-o == ou
+-d == se existir 'string'
+-z == se estiver vazia 'string'
+-f == se arquvo/pasta existir
+-r == se o arquivo/pasta pode ser lido
+-s == se arquivo/pasta nao conter 0kb
+-w == se pode ser alterado
+-x == se pode ser executado
+-le === meor/igual
+-ge == maior/igual
+
+
+strings
+
+if [[string1 > string2]]
+compara se é maior 
+if [[strig1 == string2]]
+compara se é igual
+
+variavel=${#string}
+
+variavel recebe a string
+
+
+*************************************
+primeiro = $ { nome : 0 : 5 } ;
+echo "primeiro nome = $primeiro"
+
+5 é o tamanho da string
+
+////// $ { nome : 2 : 5 } ;
+
+3 ultimos caracteres
+
+proximo = $ { nome#* . };
+
+
+echo "proximo nome = $proximo"
+
+
+***************************************
+
+for i in { 1..100 }
+do
+  echo $i
+done
+
+****************************************
+
+cont = 0
+txt = 0
+c = 0
+py = 0
+
+for arq in $(ls)
+do
+  case $arq in
+            *.txt)
+            echo $arq
+            txt = $ (( $txt + 1 ));;
+             *.c)
+            echo $arq
+            c = $ (( $c + 1 ));;
+              *.py)
+            echo $arq
+            py = $ (( $py + 1 ));;
+             *)
+            echo $arq
+            cont = $ (( $cont + 1 ));;
+   esac
+done
+echo "Total de arquivos lidos sao: $cont"
+echo "Total de arquivos txt sao: $txt"
+echo "Total de arquivos c sao: $c"
+echo "Total de arquivos python sao: $py"
+
+
+***********************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
